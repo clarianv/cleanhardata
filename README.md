@@ -14,6 +14,15 @@ This project aims to put together this Human Activity Recognition data into one 
 \---data
     |
     \---ucihar
+        |   README.txt
+```
+But when the input data set from the site above is downloaded, the file structure should look like this
+```
+|   run_analysis.R
+|
+\---data
+    |
+    \---ucihar
         |   activity_labels.txt
         |   features.txt
         |   features_info.txt
