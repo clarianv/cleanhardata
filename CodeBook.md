@@ -66,14 +66,14 @@ The run_analysis.R script reads and processes the data, as follows:
 ```
 ---
 #### Steps for A.3: getDataFromFolder()
-##### A.3.i. get the activity labels
+##### A.3.i. get the subject labels
 ```R
   # 1) get the subjects
   # e.g. "./data/ucihar/test/subject_test.txt"
   subject <- read.csv(paste("./data/ucihar/",type,"/subject_",type,".txt", sep = ""), header = FALSE)
   names(subject) <- c("subject")
 ```
-##### A.3.ii. 
+##### A.3.ii. get the activities, and apply the appropriate label
 ```R
   # 2) get the activities done by the subjects; add the label "WALKING" or "LAYING"
   # e.g. "./data/ucihar/test/y_test.txt"
@@ -81,7 +81,7 @@ The run_analysis.R script reads and processes the data, as follows:
   names(activity_row) <- c("id")
   activity <- merge(activity_row, activity_labels, by.x="id", by.y="id")
 ```
-##### A.3.iii. 
+##### A.3.iii. get the data needed: means & sds of the measurements.
 ```R
   # 3) get the measurements of the activities done by the subjects
   # e.g. "./data/ucihar/test/X_test.txt"
@@ -94,7 +94,7 @@ The run_analysis.R script reads and processes the data, as follows:
 ```
 at this point the features to be selected are filtered already
 
-##### A.3.iv. 
+##### A.3.iv. combine the subject, activity, and data columns
 ```R
   # 4.) combine all data into one data frame: subject, activity, data set
   data <- cbind(subject, as.character(activity$activity), features)
