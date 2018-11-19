@@ -1,6 +1,15 @@
 
 #run_analysis()
 
+
+
+
+
+
+
+
+
+
 ################################################################################################################
 # This function summarises the dataframe by grouping into each subject and each activity, 
 # then getting the mean from the measurements, and finally returns the summarised dataframe.
@@ -42,6 +51,7 @@ summariseHarData <- function(data)
 readAndTidyHarData <- function()
 {
   library(tidyr)
+  library(plyr)
   library(dbplyr)
   library(dplyr)
   
@@ -89,7 +99,7 @@ getDataFromFolder <- function(type, activity_labels, feature_names)
   # e.g. "./data/ucihar/test/y_test.txt"
   activity_row <- read.csv(paste("./data/ucihar/",type,"/y_",type,".txt", sep = ""), header = FALSE)
   names(activity_row) <- c("id")
-  activity <- merge(activity_row, activity_labels, by.x="id", by.y="id")
+  activity <- left_join(activity_row, activity_labels, by = "id")
   
   # 3) get the measurements of the activities done by the subjects
   # e.g. "./data/ucihar/test/X_test.txt"
