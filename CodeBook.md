@@ -81,7 +81,7 @@ The run_analysis.R script reads and processes the data, as follows:
   # e.g. "./data/ucihar/test/y_test.txt"
   activity_row <- read.csv(paste("./data/ucihar/",type,"/y_",type,".txt", sep = ""), header = FALSE)
   names(activity_row) <- c("id")
-  activity <- merge(activity_row, activity_labels, by.x="id", by.y="id")
+  activity <- left_join(activity_row, activity_labels, by = "id")
 ```
 ##### A.3.iii. get the data needed: means & sds of the measurements.
 ```R
