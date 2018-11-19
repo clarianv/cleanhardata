@@ -8,7 +8,7 @@ This project aims to put together this Human Activity Recognition data into one 
 
 
 ## What's included this package
-
+```
 |   run_analysis.R
 |
 \---data
@@ -28,7 +28,7 @@ This project aims to put together this Human Activity Recognition data into one 
             |   subject_train.txt
             |   X_train.txt
             |   y_train.txt
-
+```
 # run_analysis.R
 This script reads and processes the data, as follows:
 
@@ -48,10 +48,11 @@ The files from the "ucihar" folder
 run_analysis()
 
 ## Expected Output
+```
 \---data
     |   avgHarData.txt
     |   harData.txt
-
+```
 # harData.txt
 The tidy data set from steps 1-4 of the script written on a text file.
 
