@@ -9,10 +9,12 @@ run_analysis <- function()
 {
   #1.) Prepare the tidy data
   harData <- readAndTidyHarData()
-  write.table(harData, file = "./data/harData.txt",  row.name=FALSE, sep = ",")
   
   #2.) summarise with a mean
   avgHarData <- summariseHarData(harData)
+  
+  #3.) Export the tidy & analyses data into text files
+  write.table(harData, file = "./data/harData.txt",  row.name=FALSE, sep = ",")
   write.table(avgHarData, file = "./data/avgHarData.txt", row.name=FALSE, sep = ",")
   
   harData
@@ -68,8 +70,8 @@ readAndTidyHarData <- function()
   test <- getDataFromFolder("test", activity_labels, feature_names)
   train <- getDataFromFolder("train", activity_labels, feature_names)
   
+  #4.) put the two data frames into one
   final_data <- rbind(test, train)
-  
   final_data
 }
 
