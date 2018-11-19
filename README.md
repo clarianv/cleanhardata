@@ -1,4 +1,4 @@
-### Introduction
+# Introduction
 
 The data from Center for Machine Learning and Intelligent System represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 
@@ -38,7 +38,7 @@ But when the input data set from the site above is downloaded, the file structur
             |   X_train.txt
             |   y_train.txt
 ```
-# run_analysis.R
+### run_analysis.R
 This script reads and processes the data, as follows:
 
 1. Merges the training and the test sets to create one data set.
@@ -47,14 +47,9 @@ This script reads and processes the data, as follows:
 4. Appropriately labels the data set with descriptive variable names.
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity (e.g. walking, sitting) and each subject (or the person who did the experiment).
 
-# "data" folder
-This folder contains the "ucihar" folder where the input "human activity recognition" data set is in
-
 ## Input
-The files from the "ucihar" folder
+The files in the "ucihar" folder
 
-## How to use
-run_analysis()
 
 ## Expected Output
 ```
@@ -62,9 +57,11 @@ run_analysis()
     |   avgHarData.txt
     |   harData.txt
 ```
-# harData.txt
+### harData.txt
 The tidy data set from steps 1-4 of the script written on a text file.
 
-# avgHarData.txt
+### avgHarData.txt
 The averages of the data set per measure grouped by subject and activity.
 	
+## How to use
+run_analysis()
